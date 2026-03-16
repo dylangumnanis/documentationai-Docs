@@ -1,0 +1,141 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to Snow AI. This page lists recent releases, new features, and bug fixes to keep you informed.
+---
+
+## Recent Releases
+
+<Callout kind="info">
+Stay updated with Snow AI's latest enhancements. Check this changelog regularly for new AI prompt features, performance improvements, and critical bug fixes. Enable notifications in your dashboard to get alerts on major releases.
+</Callout>
+
+Snow AI releases updates frequently to enhance AI-driven website building, domain management, and hosting integrations. Each version includes new capabilities for prompting websites, better performance, and resolved issues.
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v1-2-0">
+    Enhanced AI prompts and faster generation.
+  </Card>
+  <Card title="v1.1.0" icon="settings" href="#v1-1-0">
+    Improved hosting integrations.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v1-0-0">
+    Initial stable release.
+  </Card>
+</Columns>
+
+## v1.2.0 - October 15, 2024
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added advanced AI prompt chaining for multi-page website generation.
+- Integrated CRM and booking form builders directly in the prompt interface.
+- New template library with 50+ responsive designs.
+
+## Improvements
+
+- Reduced website generation time by 40% with optimized AI models.
+- Enhanced domain search with real-time availability checks.
+
+## Bug Fixes
+
+- Fixed intermittent failures in VPS scaling prompts.
+- Resolved email configuration sync issues with custom domains.
+
+</Update>
+
+## v1.1.0 - September 20, 2024
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Introduced Horizons AI for instant website deployment from prompts.
+- Added business email setup wizard integrated with domain purchases.
+
+## Improvements
+
+- Better error handling in AI copy generation for brand consistency.
+
+## Bug Fixes
+
+- Patched security vulnerability in webhook endpoints (CVE-2024-XXXX).
+- Fixed UI glitches in the prompt editor on mobile devices.
+
+</Update>
+
+## v1.0.0 - August 10, 2024
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core AI website builder with prompt-based creation.
+- VPS hosting controls and domain management dashboard.
+- Basic analytics for generated sites.
+
+## Breaking Changes
+
+- Updated API endpoints from `/v0/` to `/v1/` prefix.
+
+## Bug Fixes
+
+- Initial stability improvements post-beta.
+
+</Update>
+
+## Upgrade to the Latest Version
+
+Follow these steps to ensure you have the most recent Snow AI features.
+
+<Steps>
+  <Step title="Check Current Version" icon="check-circle">
+
+  Log in to your dashboard at `https://dashboard.example.com` and navigate to Settings > About.
+
+  </Step>
+  <Step title="Update CLI" icon="download">
+
+````bash
+npm update @snowai/cli@latest
+# or
+pip install --upgrade snowai
+````
+
+  </Step>
+  <Step title="Restart Services" icon="refresh-cw">
+
+  Run `snowai restart` to apply changes.
+
+  </Step>
+  <Step title="Verify" icon="shield">
+
+  Test a prompt: `snowai prompt "Build a landing page"`.
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+After upgrading, review your prompts for compatibility with new AI chaining features.
+</Callout>
+
+## Upcoming Features
+
+<ExpandableGroup>
+  <Expandable title="AI Collaboration Tools" default-open="true">
+    Multi-user editing and real-time prompt collaboration coming in v1.3.0.
+  </Expandable>
+  <Expandable title="Advanced Analytics">
+    Deeper insights into site performance and AI generation metrics.
+  </Expandable>
+  <Expandable title="Deprecations">
+    Legacy `/v0/` endpoints will be removed in v1.4.0. Migrate now.
+  </Expandable>
+</ExpandableGroup>
+
+| Version | Date       | Key Changes                  |
+|---------|------------|------------------------------|
+| v1.2.0  | 2024-10-15 | AI chaining, speed boosts    |
+| v1.1.0  | 2024-09-20 | Horizons integration         |
+| v1.0.0  | 2024-08-10 | Stable release               |

@@ -1,0 +1,104 @@
+---
+title: Introduction to Snow AI
+description: Discover Snow AI, an AI-powered platform for building and managing websites with ease. Learn about its key features, benefits, and how it simplifies your online journey.
+---
+
+<Callout kind="info" title="Starter Kit Template">
+  This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
+</Callout>
+
+## Overview
+
+Snow AI empowers you to build stunning websites using artificial intelligence, without needing coding expertise. You simply describe your vision through natural language prompts, and Snow AI generates complete sites with design, content, CRM integrations, and booking forms. This platform streamlines your online presence, making it ideal for businesses, freelancers, and individuals launching quickly.
+
+Whether you start from scratch or enhance existing projects, Snow AI handles the heavy lifting so you focus on your brand.
+
+## Key Features
+
+Snow AI stands out with powerful AI-driven tools that accelerate website creation.
+
+<Columns cols={3}>
+  <Card title="AI Website Builder" icon="zap">
+    Prompt AI to create full websites instantly, including responsive layouts and optimized content.
+  </Card>
+  <Card title="Prompt-Based Design" icon="wand-2">
+    Chat with AI for custom designs, copy, and features like forms and calendars.
+  </Card>
+  <Card title="Integrated Tools" icon="settings">
+    Built-in CRM, booking systems, and hosting for seamless management.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Explore the [Snow AI dashboard](https://dashboard.example.com) to test these features live.
+</Callout>
+
+## Benefits for Your Online Journey
+
+You gain speed and simplicity with Snow AI. Businesses launch professional sites in minutes, saving thousands on developers. Individuals create portfolios or blogs effortlessly. Key advantages include:
+
+- **Cost-effective**: No need for expensive designers or agencies.
+- **Scalable**: Grow from landing pages to full e-commerce sites.
+- **User-friendly**: Intuitive prompts replace complex tools.
+
+## Quick Start
+
+Get your first site live in under 10 minutes.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Create a free account at [https://app.snowai.app](https://app.snowai.app).
+  </Step>
+  <Step title="Prompt Your Site" icon="message-circle">
+    Describe your site: "Build a portfolio for a photographer with gallery and contact form."
+  </Step>
+  <Step title="Customize" icon="edit-3">
+    Tweak AI-generated elements using the visual editor.
+  </Step>
+  <Step title="Launch" icon="rocket">
+    Publish to a custom domain or Snow AI hosting.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="cURL,JavaScript">
+  ```bash
+  curl -X POST https://api.example.com/v1/websites \
+    -H "Authorization: Bearer YOUR_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "prompt": "Modern business landing page",
+      "features": ["contact-form", "gallery"]
+    }'
+  ```
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/websites', {
+    method: 'POST',
+    headers: {
+      'Authorization': 'Bearer YOUR_API_KEY',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      prompt: 'Modern business landing page',
+      features: ['contact-form', 'gallery']
+    })
+  });
+  const site = await response.json();
+  ```
+</CodeGroup>
+
+## Next Steps
+
+Ready to dive deeper?
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="book-open" href="/quickstart">
+    Follow our step-by-step tutorial to build your first site.
+  </Card>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your API access and manage keys.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+  Start prompting your dream website today and transform your online presence!
+</Callout>

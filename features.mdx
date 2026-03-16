@@ -1,0 +1,132 @@
+---
+title: Core Features
+description: Explore the essential capabilities of Snow AI that enable seamless website creation and management. Dive into use cases for AI-driven design, CRM integration, and more.
+---
+
+## Overview
+
+Snow AI empowers you to build, customize, and scale websites using intuitive AI tools. From generating complete sites via natural language prompts to integrating CRM systems and booking forms, you handle everything without coding expertise. Key capabilities include AI-assisted design, content generation, seamless integrations, and robust hosting options.
+
+<Callout kind="info">
+Snow AI combines AI automation with reliable hosting, letting you launch professional websites instantly.
+</Callout>
+
+## Key Features at a Glance
+
+<Columns cols={2}>
+  <Card title="AI Website Design" icon="zap" href="#ai-design">
+    Prompt your site into existence with AI that handles layout, design, and responsiveness.
+  </Card>
+  <Card title="CRM & Forms" icon="users" href="#crm-forms">
+    Add booking forms and CRM integration using simple natural language instructions.
+  </Card>
+  <Card title="Content Generation" icon="edit-3" href="#content-generation">
+    Auto-generate copy, images, and SEO-optimized content tailored to your brand.
+  </Card>
+  <Card title="Hosting & Scaling" icon="server" href="#hosting-scaling">
+    Scale with VPS hosting, custom domains, and professional email.
+  </Card>
+</Columns>
+
+## AI-Assisted Website Design
+
+Build custom websites by describing your vision in plain English. Snow AI generates responsive designs, complete with navigation, pages, and styling.
+
+### Quick Start Workflow
+
+<Steps>
+  <Step title="Describe Your Site" icon="message-circle">
+    Enter a prompt like: "Create a modern portfolio site for a photographer with gallery, about, and contact pages."
+  </Step>
+  <Step title="Review & Customize" icon="edit">
+    Preview the generated site and tweak elements via chat: "Make the header purple and add a booking button."
+  </Step>
+  <Step title="Deploy Instantly" icon="rocket">
+    Publish with one click to your custom domain.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="Prompt Examples">
+  ```text
+  Build an e-commerce site for handmade jewelry with product pages, cart, and Stripe checkout.
+  ```
+  ```text
+  Design a SaaS landing page with hero section, features grid, pricing table, and signup form.
+  ```
+</CodeGroup>
+
+## CRM and Booking Forms Integration
+
+Integrate CRM and forms effortlessly using natural language. Snow AI handles the backend connections.
+
+<Tabs>
+  <Tab title="Booking Forms" icon="calendar">
+    Prompt: "Add a booking calendar for consultations integrated with Google Calendar."
+
+    ```javascript
+    // Example API call after generation
+    const booking = await fetch('https://api.snowai.app/forms/booking', {
+      method: 'POST',
+      headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+      body: JSON.stringify({ event: 'consultation', date: '2024-12-01' })
+    });
+    ```
+  </Tab>
+  <Tab title="CRM Sync" icon="database">
+    Prompt: "Connect to HubSpot CRM for lead capture from contact forms."
+
+    <ParamField path="leads" param-type="object" required="true">
+      Customer data including name, email, and source.
+    </ParamField>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+Test integrations in preview mode before going live to ensure data flows correctly.
+</Callout>
+
+## Content and Copy Management
+
+Generate and manage content dynamically. AI creates SEO-friendly copy, blog posts, and product descriptions.
+
+<Expandable title="Advanced Content Prompts" default-open="false">
+Use specific prompts for best results:
+
+````bash
+# Generate blog post
+snowai generate content --type blog --topic "AI in web design" --tone professional
+````
+
+This outputs optimized Markdown ready for your site.
+</Expandable>
+
+## Hosting and Scaling Options
+
+Scale from simple sites to high-traffic apps with integrated hosting.
+
+| Feature | Description | Use Case |
+|---------|-------------|----------|
+| Shared Hosting | Reliable for static sites | Blogs, portfolios |
+| VPS Hosting | Dedicated resources | E-commerce, apps |
+| Custom Domains | Secure your brand | Professional presence |
+| Business Email | Match your domain | info@yourdomain.com |
+
+<Columns cols={3}>
+  <Card title="Get Started" icon="play" href="/quickstart">
+    Follow the quickstart guide.
+  </Card>
+  <Card title="API Reference" icon="code" href="/authentication">
+    Integrate via API.
+  </Card>
+  <Card title="Support" icon="help-circle" href="/help-center">
+    Need help? Check our resources.
+  </Card>
+</Columns>
+
+## Best Practices
+
+- Start with broad prompts, then refine iteratively.
+- Use `YOUR_API_KEY` securely in environment variables.
+- Monitor performance via the dashboard at `https://dashboard.snowai.app`.
+
+These features make Snow AI your all-in-one solution for AI-powered web projects.

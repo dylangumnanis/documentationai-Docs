@@ -1,0 +1,176 @@
+---
+title: Integrations and Extensions
+description: Connect Snow AI with third-party services to enhance your website's functionality. Learn about webhooks, APIs, and popular integrations for a complete online presence.
+---
+
+## Overview
+
+Snow AI supports seamless integrations with domains, email providers, hosting services, and third-party tools. You can extend your website's capabilities by connecting to external services for analytics, payments, and custom automations via webhooks. This guide covers setup steps, code examples, and best practices to build a robust online presence.
+
+<Callout kind="info">
+Review your Snow AI dashboard at `https://dashboard.snowai.app` to manage integrations. Enable permissions for third-party access before proceeding.
+</Callout>
+
+## Popular Integrations
+
+Discover key integrations that power your Snow AI projects.
+
+<Columns cols={3}>
+  <Card title="Domain & DNS" icon="globe" href="#domain-setup">
+    Connect custom domains and manage DNS records effortlessly.
+  </Card>
+  <Card title="Email Services" icon="mail" href="#email-setup">
+    Set up professional email addresses matching your domain.
+  </Card>
+  <Card title="Hosting & VPS" icon="server" href="#hosting">
+    Link to reliable hosting for scalable deployments.
+  </Card>
+</Columns>
+
+<Columns cols={2}>
+  <Card title="Analytics" icon="bar-chart-3" href="#analytics">
+    Track user behavior with Google Analytics or similar tools.
+  </Card>
+  <Card title="Payments" icon="credit-card" href="#payments">
+    Accept payments via Stripe or PayPal gateways.
+  </Card>
+</Columns>
+
+## Domain and Email Integrations
+
+### Domain Setup
+
+Follow these steps to connect a custom domain.
+
+<Steps>
+  <Step title="Purchase Domain" icon="shopping-bag">
+    Acquire a domain from a registrar like GoDaddy or Namecheap.
+  </Step>
+  <Step title="Update DNS" icon="settings">
+    Add these DNS records in your provider's panel:
+
+````bash
+# CNAME for www
+www.example.com  CNAME  snowai.app
+
+# A record for apex domain
+example.com     A      192.0.2.1
+````
+  </Step>
+  <Step title="Verify in Dashboard" icon="check-circle">
+    Go to Snow AI dashboard > Domains > Verify. Propagation takes `<24h`.
+  </Step>
+</Steps>
+
+### Email Setup
+
+<Expandable title="Advanced Email Configuration" default-open="false">
+Create business email like `info@yourdomain.com`.
+
+1. Enable email forwarding in Snow AI settings.
+2. Point MX records:
+
+```
+MX  Priority  Hostname
+10  mx1.snowai.app
+20  mx2.snowai.app
+```
+</Expandable>
+
+## External Hosting and VPS
+
+Connect Snow AI to hosting providers for advanced deployments.
+
+<Tabs>
+  <Tab title="Shared Hosting" icon="server">
+    Ideal for static sites.
+
+    <CodeGroup tabs="cPanel,Plesk">
+````bash
+# cPanel: Add subdomain
+subdomain.example.com -> snowai.app
+````
+
+````bash
+# Plesk: Domain forwarding
+Forward example.com to https://your-snowai-site.app
+````
+    </CodeGroup>
+  </Tab>
+  <Tab title="VPS" icon="cpu">
+    For dynamic apps.
+
+    ```bash
+    # SSH into VPS and clone your Snow AI export
+    git clone https://github.com/your-repo/snowai-export.git /var/www/html
+    npm install && npm start
+    ```
+  </Tab>
+</Tabs>
+
+## Webhooks for Custom Automations
+
+Webhooks enable real-time notifications from Snow AI to your services. Use `POST` to `https://your-webhook-url.com/webhook`.
+
+<Request show-lines="true">
+```javascript
+// JavaScript (Node.js)
+const response = await fetch('https://api.example.com/v1/webhooks', {
+  method: 'POST',
+  headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+  body: JSON.stringify({
+    url: 'https://your-webhook-url.com/webhook',
+    events: ['user.signup', 'order.created']
+  })
+});
+```
+
+```python
+# Python
+import requests
+response = requests.post('https://api.example.com/v1/webhooks', 
+  headers={'Authorization': 'Bearer YOUR_API_KEY'},
+  json={'url': 'https://your-webhook-url.com/webhook', 'events': ['user.signup']}
+)
+```
+
+```bash
+# cURL
+curl -X POST https://api.example.com/v1/webhooks \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{"url":"https://your-webhook-url.com/webhook","events":["user.signup"]}'
+```
+</Request>
+
+**Sample Payload:**
+
+```json
+{
+  "event": "user.signup",
+  "data": {
+    "userId": "usr_123",
+    "email": "user@example.com"
+  },
+  "timestamp": "2024-01-15T10:30:00Z"
+}
+```
+
+## Analytics and Payments
+
+| Service     | Category    | Setup Endpoint                  | Key Benefit                  |
+|-------------|-------------|---------------------------------|------------------------------|
+| Google Analytics | Analytics  | `https://api.example.com/analytics` | Real-time user insights     |
+| Stripe      | Payments   | `https://api.example.com/payments/stripe` | Secure recurring billing   |
+| PayPal      | Payments   | `https://api.example.com/payments/paypal` | Global payment acceptance  |
+
+<Callout kind="tip" title="Next Steps">
+Explore the [Quickstart](/quickstart) for initial setup, then test webhooks in a sandbox environment.
+</Callout>
+
+```mermaid
+graph LR
+    A[Snow AI Event] --> B[Webhook Trigger]
+    B --> C[Your Server]
+    C --> D[External Service<br/>(Email, CRM)]
+    D --> E[Automation Complete]
+```
